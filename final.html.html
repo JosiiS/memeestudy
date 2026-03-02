@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Bora estudar 😂</title>
+
+<style>
+body {
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff4d88, #ff0066);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    font-size: 50px;
+    z-index: 2;
+}
+
+img {
+    width: 250px;
+    border-radius: 20px;
+    margin-top: 20px;
+    z-index: 2;
+    box-shadow: 0 0 20px rgba(255,255,255,0.6);
+}
+
+.coracao {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    animation: cair 5s linear infinite;
+}
+
+@keyframes cair {
+    0% { transform: translateY(-10vh); }
+    100% { transform: translateY(110vh); }
+}
+</style>
+</head>
+
+<body>
+
+<h1>📚 BORAAAA ESTUDAR KKKKK 😂💖</h1>
+
+<img src="foto.jpg" alt="Nossa foto">
+
+<script>
+function criarCoracao() {
+    const coracao = document.createElement("div");
+    coracao.classList.add("coracao");
+    coracao.innerHTML = "💖";
+    coracao.style.left = Math.random() * 100 + "vw";
+    coracao.style.fontSize = (Math.random() * 20 + 20) + "px";
+    coracao.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    document.body.appendChild(coracao);
+
+    setTimeout(() => {
+        coracao.remove();
+    }, 5000);
+}
+
+setInterval(criarCoracao, 300);
+</script>
+
+</body>
+</html>
